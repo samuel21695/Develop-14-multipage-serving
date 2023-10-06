@@ -18,4 +18,9 @@ const server = http.createServer(function(request, response) {
     </html>
     `;
   }
+    if (request.url === "/") {
+      let doc = docMaker("메인페이지", "/sub", "서브페이지로 이동!");
+      response.writeHead(200, { "Content=Type": "text/html"});
+      response.end(doc);
+    }
 })
